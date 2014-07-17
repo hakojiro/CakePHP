@@ -1,4 +1,48 @@
 <?php
+// 環境切り替え
+switch (getenv('SERVER_NAME')) {
+
+		// ローカルテスト環境
+	case '192.168.33.10':
+
+		define('TEST', true);
+		define('DEBUG_LEVEL', 2);
+
+		define('DB_HOST', 'localhost');
+		define('DB_USER', 'vagrant');
+		define('DB_PASSWORD', 'vagrant');
+		define('DB_DATABASE', 'test');
+
+		break;
+
+		// サーバーテスト環境
+	case 'example.com':
+
+		define('TEST', true);
+		define('DEBUG_LEVEL', 1);
+
+		define('DB_HOST', 'localhost');
+		define('DB_USER', '');
+		define('DB_PASSWORD', '');
+		define('DB_DATABASE', '');
+
+		break;
+
+		// 本番環境
+	case 'example.com':
+
+		define('TEST', false);
+		define('DEBUG_LEVEL', 0);
+
+		define('DB_HOST', '');
+		define('DB_USER', '');
+		define('DB_PASSWORD', '');
+		define('DB_DATABASE', '');
+
+		break;
+
+}
+
 /**
  * This is core configuration file.
  *
@@ -31,7 +75,7 @@
  * In production mode, flash messages redirect after a time interval.
  * In development mode, you need to click the flash message to continue.
  */
-Configure::write('debug', 2);
+Configure::write('debug', DEBUG_LEVEL);
 
 /**
  * Configure the Error handler used to handle errors for your application. By default

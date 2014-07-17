@@ -1,0 +1,9 @@
+2014-07-17 20:31:59 Error: [MissingControllerException] Controller class HogeController could not be found.
+Exception Attributes: array (
+  'class' => 'HogeController',
+  'plugin' => NULL,
+)
+Request URL: /CakePHP/hoge
+Stack Trace:
+#0 /var/www/html/CakePHP/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

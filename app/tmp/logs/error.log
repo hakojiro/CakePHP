@@ -7,3 +7,12 @@ Request URL: /CakePHP/hoge
 Stack Trace:
 #0 /var/www/html/CakePHP/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2014-07-17 20:43:03 Error: [MissingControllerException] Controller class CommonController could not be found.
+Exception Attributes: array (
+  'class' => 'CommonController',
+  'plugin' => NULL,
+)
+Request URL: /CakePHP/common/
+Stack Trace:
+#0 /var/www/html/CakePHP/app/webroot/index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
